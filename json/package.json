@@ -1,0 +1,24 @@
+{
+  "name": "projet3_ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./sass/style.scss:./css/style.css -w --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer-d ./css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devi-dev/IsmahaneHAMOU_3_09042021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist":"last 2 versions",
+  "bugs": {
+    "url": "https://github.com/devi-dev/IsmahaneHAMOU_3_09042021/issues"
+  },
+  "homepage": "https://github.com/devi-dev/IsmahaneHAMOU_3_09042021#readme",
+  "dependencies": {
+    "sass": "^1.32.11"
+  }
+}
