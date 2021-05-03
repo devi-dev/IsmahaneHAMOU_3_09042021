@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 460px) {
+
   body {
     font-family: 'roboto','shrinkand',curve,Arial, sans-serif;
   }
@@ -8,3 +8,4 @@
   }
 }
 /*# sourceMappingURL=style.css.map */
+@media screen and (max-device-width: 460px) {
