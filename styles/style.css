@@ -1,11 +1,15 @@
 /*mise en forme page d'accueil*/
+header {
+  display: block;
+}
+
 .heading, .restaurants, .meal__btn {
   background-color: #f6f6f6;
 }
 
 a {
+  outline: none;
   text-decoration: none;
-  color: black;
 }
 
 footer {
@@ -47,10 +51,13 @@ i {
   padding: 20px;
 }
 
+.heading, nav, .restaurants, footer {
+  padding: 20px;
+}
+
 .heading {
   text-align: center;
   margin: auto;
-  padding: 40px;
 }
 
 .heading__title {
@@ -67,12 +74,27 @@ i {
 .heading__btn {
   font-size: 1rem;
   font-weight: bold;
-  width: 60%;
-  height: 60px;
+  width: 80%;
   border-radius: 30px;
-  color: white;
+  color: #fff;
   border: transparent;
   background: linear-gradient(to bottom right, #FF79DA, 45%, #9356DC);
-  box-shadow: 5px 5px 5px #e7e7e7;
+  box-shadow: 5px 5px 5px #d0d0d0;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.list__number {
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding: 12px;
+  color: #fff;
+  position: middle left absolute;
 }
 /*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */

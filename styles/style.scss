@@ -2,6 +2,10 @@
 @import "_mixin.scss";
 
 /*mise en forme page d'accueil*/
+header{
+  display: block;
+
+}
 .heading,.restaurants,.meal__btn{
 background-color: $mainbgcolor;
 }
@@ -40,9 +44,11 @@ h1,h2{
     i{
      @include padding;
     }
+    .heading,nav,.restaurants,footer{
+      @include padding;
+      }
     .heading{
       @include center;
-      @include largepadding;
     }
       .heading__title{
         font-size:2rem;
@@ -56,15 +62,29 @@ h1,h2{
       .heading__btn {
         font-size: 1rem;
         font-weight: bold;
-        width: 60%;
-        height: 60px;
+        width: 80%;
         border-radius:30px;
-        color:white;
+        color:$white;
         border:transparent;
         background: linear-gradient(to bottom right, $secondarycolor,45%,$primarycolor);
-        @include botboxshadow
+        @include botboxshadow;
+        @include padding;
+        @include topbotmargin;
+        cursor: pointer;
       }
-    
+
+    ul{
+      list-style: none;
+      }
+      .list__number{
+        background-color: $primarycolor;
+        border-radius: 50%;
+        padding: 12px;
+        color:#fff;
+        position: middle left absolute;
+        
+      }
+
 
 
 /*# sourceMappingURL=style.css.map */

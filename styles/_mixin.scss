@@ -11,7 +11,11 @@
 @mixin largepadding{
     padding :40px;
 }
+@mixin topbotmargin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 @mixin botboxshadow {
-    box-shadow: 5px 5px 5px darken($mainbgcolor,6%);
+    box-shadow: 5px 5px 5px darken($mainbgcolor,15%);
 }
 
