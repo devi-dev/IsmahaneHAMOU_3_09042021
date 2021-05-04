@@ -1,4 +1,71 @@
-__logo
-{
-    font-style: #2588ec55;
+@import "_variables";
+@import "_mixin.scss";
+
+/*mise en forme page d'accueil*/
+.heading,.restaurants,.meal__btn{
+background-color: $mainbgcolor;
 }
+a{
+  outline: none;
+  text-decoration: none;
+}
+
+footer{
+  background-color: $footerbgcolor;
+  color: $white; 
+}
+h1,h2{ 
+  margin-block-start: 0em;
+  margin-block-end: 0em;}
+
+  body {
+    font-family: 'roboto','shrinkand',curve,Arial, sans-serif;
+    font-size:medium;   
+    width:100%;
+    margin:0 auto;
+  }
+  
+  .logo {
+    font-family: 'Shrikhand';
+    font-size:2.3rem;
+    @include center;
+    @include smallpadding;
+}
+  .location{
+    background-color:darken($mainbgcolor, 4.6%);
+    @include center;
+    font-size: 1.2rem;
+    font-weight:bold;
+  }
+    i{
+     @include padding;
+    }
+    .heading{
+      @include center;
+      @include largepadding;
+    }
+      .heading__title{
+        font-size:2rem;
+        @include smallpadding;
+        font-weight: bold;
+      }
+      .heading__description{
+        font-size:1.2rem;
+        @include smallpadding;
+      }
+      .heading__btn {
+        font-size: 1rem;
+        font-weight: bold;
+        width: 60%;
+        height: 60px;
+        border-radius:30px;
+        color:white;
+        border:transparent;
+        background: linear-gradient(to bottom right, $secondarycolor,45%,$primarycolor);
+        @include botboxshadow
+      }
+    
+
+
+/*# sourceMappingURL=style.css.map */
+@media screen and (max-device-width: 460px) {}

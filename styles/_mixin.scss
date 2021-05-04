@@ -1,0 +1,17 @@
+@mixin center{
+    text-align: center;
+    margin:auto;    
+}
+@mixin smallpadding{
+    padding :10px;
+}
+@mixin padding{
+    padding :20px;
+}
+@mixin largepadding{
+    padding :40px;
+}
+@mixin botboxshadow {
+    box-shadow: 5px 5px 5px darken($mainbgcolor,6%);
+}
+
