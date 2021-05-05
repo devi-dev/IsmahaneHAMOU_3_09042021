@@ -19,3 +19,26 @@
     box-shadow: 5px 5px 5px darken($mainbgcolor,15%);
 }
 
+@mixin btnmainshape{
+    font-size: 1rem;
+    font-weight: bold;
+    width: 80%;
+    border-radius:30px;
+    border:transparent;
+    cursor: pointer;
+}
+
+@mixin flashybtncolor{
+    background: linear-gradient(to bottom right, $secondarycolor,45%,$primarycolor);
+    color: $white;
+}
+
+@mixin mainbtncolor{
+    background: $white;
+    color: black;
+}
+
+
+
+
+

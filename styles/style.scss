@@ -6,11 +6,10 @@ header{
   display: block;
 
 }
-.heading,.restaurants,.meal__btn{
+.heading,.restaurants,.meal__btn, .nav__btn{
 background-color: $mainbgcolor;
 }
 a{
-  outline: none;
   text-decoration: none;
 }
 
@@ -22,8 +21,8 @@ h1,h2{
   margin-block-start: 0em;
   margin-block-end: 0em;}
 
-  body {
-    font-family: 'roboto','shrinkand',curve,Arial, sans-serif;
+body {
+    font-family: 'roboto','shrinkand',Arial, sans-serif;
     font-size:medium;   
     width:100%;
     margin:0 auto;
@@ -31,12 +30,12 @@ h1,h2{
   
   .logo {
     font-family: 'Shrikhand';
-    font-size:2.3rem;
+    font-size:2.2rem;
     @include center;
-    @include smallpadding;
+    @include padding;
 }
   .location{
-    background-color:darken($mainbgcolor, 4.6%);
+    background-color:darken($mainbgcolor, 5%);
     @include center;
     font-size: 1.2rem;
     font-weight:bold;
@@ -60,30 +59,84 @@ h1,h2{
         @include smallpadding;
       }
       .heading__btn {
-        font-size: 1rem;
-        font-weight: bold;
-        width: 80%;
-        border-radius:30px;
-        color:$white;
-        border:transparent;
-        background: linear-gradient(to bottom right, $secondarycolor,45%,$primarycolor);
+        @include btnmainshape;
+        @include flashybtncolor;
         @include botboxshadow;
         @include padding;
         @include topbotmargin;
-        cursor: pointer;
       }
 
     ul{
       list-style: none;
-      }
+      padding-inline-start: 0px;
       .list__number{
         background-color: $primarycolor;
         border-radius: 50%;
-        padding: 12px;
+        @include smallpadding;
+        font-weight: bold;
         color:#fff;
-        position: middle left absolute;
-        
+        position: relative;
+        left: 15px;
       }
+      .nav__btn{
+        @include btnmainshape;  
+        @include botboxshadow;
+        @include padding;
+        @include topbotmargin;
+        &:hover {
+          i{
+          color: $primarycolor;
+          }
+          background-color:lighten($primarycolor,35%);
+        }
+      }                 
+    }
+  
+  .restaurants__title{
+      @include smallpadding;
+    }
+  .restaurants__card{
+      background-color: $white;
+      border-radius: 25px;
+      overflow: hidden;
+      width: 100%;
+      max-height:300px;
+      margin-bottom: 20px;
+      position:relative;
+      z-index:1;
+    }
+    
+  .card__img{
+    width:100%;
+    max-height:200px;
+    object-fit: cover;
+    object-position:center;
+    position:relative;
+    z-index:0;
+    }
+
+  .card__new{
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    background-color:$tertiarycolor;
+    color:darken($tertiarycolor,40%);
+    @include smallpadding;
+    position: absolute;
+    z-index:2;
+    top:10%;
+    right:5%;     
+  }
+
+  .card__description{
+    color: black;
+    display: flex;
+    flex-flow: row;
+    font-size:1em;
+    text-align: left;
+    padding: 5px;
+  }
+    
 
 
 

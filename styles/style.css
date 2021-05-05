@@ -3,12 +3,11 @@ header {
   display: block;
 }
 
-.heading, .restaurants, .meal__btn {
+.heading, .restaurants, .meal__btn, .nav__btn {
   background-color: #f6f6f6;
 }
 
 a {
-  outline: none;
   text-decoration: none;
 }
 
@@ -25,7 +24,7 @@ h1, h2 {
 }
 
 body {
-  font-family: "roboto", "shrinkand", curve, Arial, sans-serif;
+  font-family: "roboto", "shrinkand", Arial, sans-serif;
   font-size: medium;
   width: 100%;
   margin: 0 auto;
@@ -33,14 +32,14 @@ body {
 
 .logo {
   font-family: "Shrikhand";
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   text-align: center;
   margin: auto;
-  padding: 10px;
+  padding: 20px;
 }
 
 .location {
-  background-color: #eaeaea;
+  background-color: #e9e9e9;
   text-align: center;
   margin: auto;
   font-size: 1.2rem;
@@ -76,25 +75,94 @@ i {
   font-weight: bold;
   width: 80%;
   border-radius: 30px;
-  color: #fff;
   border: transparent;
+  cursor: pointer;
   background: linear-gradient(to bottom right, #FF79DA, 45%, #9356DC);
+  color: #fff;
   box-shadow: 5px 5px 5px #d0d0d0;
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 
 ul {
   list-style: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
 }
-
-.list__number {
+ul .list__number {
   background-color: #9356DC;
   border-radius: 50%;
-  padding: 12px;
+  padding: 10px;
+  font-weight: bold;
   color: #fff;
-  position: middle left absolute;
+  position: relative;
+  left: 15px;
+}
+ul .nav__btn {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 80%;
+  border-radius: 30px;
+  border: transparent;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px #d0d0d0;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+ul .nav__btn:hover {
+  background-color: #f2eafb;
+}
+ul .nav__btn:hover i {
+  color: #9356DC;
+}
+
+.restaurants__title {
+  padding: 10px;
+}
+
+.restaurants__card {
+  background-color: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card__img {
+  width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: relative;
+  z-index: 0;
+}
+
+.card__new {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #99E2D0;
+  color: #278870;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  right: 5%;
+}
+
+.card__description {
+  color: black;
+  display: flex;
+  flex-flow: row;
+  font-size: 1em;
+  text-align: left;
+  padding: 5px;
 }
 /*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */
