@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-@mixin flashybtncolor{
+@mixin brightbtncolor{
     background: linear-gradient(to bottom right, $secondarycolor,45%,$primarycolor);
     color: $white;
 }

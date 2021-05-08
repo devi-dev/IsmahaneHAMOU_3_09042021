@@ -1,10 +1,11 @@
 @import "_variables";
 @import "_mixin.scss";
-
+/*# sourceMappingURL=style.css.map*/
 /*mise en forme page d'accueil*/
 header{
-  display: block;
-
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
 }
 .heading,.restaurants,.meal__btn, .nav__btn{
 background-color: $mainbgcolor;
@@ -13,44 +14,40 @@ a{
   text-decoration: none;
 }
 
-footer{
-  background-color: $footerbgcolor;
-  color: $white; 
-}
-h1,h2{ 
-  margin-block-start: 0em;
-  margin-block-end: 0em;}
-
 body {
     font-family: 'roboto','shrinkand',Arial, sans-serif;
     font-size:medium;   
     width:100%;
     margin:0 auto;
+    margin-block-start:0;
+    margin-block-end: 0;
+
   }
   
-  .logo {
+  .headlogo {
     font-family: 'Shrikhand';
-    font-size:2.2rem;
+    font-size:1.3em;
     @include center;
-    @include padding;
 }
   .location{
     background-color:darken($mainbgcolor, 5%);
-    @include center;
-    font-size: 1.2rem;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
     font-weight:bold;
   }
     i{
-     @include padding;
+     @include smallpadding;
     }
-    .heading,nav,.restaurants,footer{
+    .heading,nav,.restaurants{
       @include padding;
       }
     .heading{
       @include center;
     }
       .heading__title{
-        font-size:2rem;
+        font-size:1.5em;
         @include smallpadding;
         font-weight: bold;
       }
@@ -60,7 +57,7 @@ body {
       }
       .heading__btn {
         @include btnmainshape;
-        @include flashybtncolor;
+        @include brightbtncolor;
         @include botboxshadow;
         @include padding;
         @include topbotmargin;
@@ -88,6 +85,7 @@ body {
           color: $primarycolor;
           }
           background-color:lighten($primarycolor,35%);
+          box-shadow: 7px 7px 7px 7px darken($mainbgcolor,18%);
         }
       }                 
     }
@@ -104,6 +102,7 @@ body {
       margin-bottom: 20px;
       position:relative;
       z-index:1;
+      @include botboxshadow
     }
     
   .card__img{
@@ -132,13 +131,112 @@ body {
     color: black;
     display: flex;
     flex-flow: row;
-    font-size:1em;
-    text-align: left;
-    padding: 5px;
+    line-height:1.5em;
+    justify-content: space-between;
+    @include smallpadding;
+
   }
-    
 
+  .description__text{        
+      text-overflow: ellipsis;
+      width: 60%;
+      text-align: left;
+    }
+  .restoname{
+    margin:0px;
+  }
+  .restolocation{
+    margin: 0;
+  }
+footer {
+  padding: 30px;
+  background-color: #353535;
+  color: #fff;
+  text-align: left;
+  .foot__logo {
+  font-family: "Shrikhand";
+  font-size: 1.5em;
+    p {
+      margin: 0em;
+      a{
+        color: white;
+      }
+    }
+  }
+}
 
+/*mise en forme des pages des restaurants*/
+.backhomepage{
+  display: flex;
+  align-items: center;
+   font-size:1.3em;
+}
+.headingresto{
+  @extend .restaurants__card;
+  max-height: 250px;
+  margin: 0;
+  border:0;
+  width: 100%;
+  border-radius: 0;
+  box-shadow:none;
+  background-color: $mainbgcolor;
+}
 
-/*# sourceMappingURL=style.css.map */
-@media screen and (max-device-width: 460px) {}
+.headingresto__text{
+  @extend.card__description;
+  font-size:1.2em;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px 30px 0 0;
+  background-color: $mainbgcolor;
+  position: relative;
+  top:-30px;
+  .restotitle{
+    font-family: "Shrikhand";
+    font-weight: normal;
+    vertical-align: center;
+  }
+}
+
+.meal{
+  background-color: $mainbgcolor;
+  @include padding;
+  margin: 0;
+  border: 0;
+}
+
+.textdeco{
+  text-decoration:underline 5px $tertiarycolor;
+  }
+.meal__btn{
+  border-radius: 30px;
+  width: 100%;
+  background-color: $white;
+  border:none;
+  margin-bottom: 20px;
+  @include botboxshadow;
+  display: flex;
+  flex-flow:wrap column;
+}
+.btn__description{
+  display: flex;
+  align-content: space-around;
+}
+
+.btn__animation{
+  background-color: $tertiarycolor;
+  background-size: 10%;
+  color: $white;
+  font-size:1.2em;
+  border-radius: 0 30px 30px 0;
+  height: 100%;
+}
+
+.order{
+  @include padding;
+  text-align: center;
+  .order__btn{
+  @extend .heading__btn;
+ margin: 0 auto;
+  }
+}
