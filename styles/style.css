@@ -212,7 +212,7 @@ footer .foot__logo p a {
 
 .headingresto__text {
   font-size: 1.2em;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-radius: 30px 30px 0 0;
   background-color: #f6f6f6;
@@ -238,14 +238,30 @@ footer .foot__logo p a {
 }
 
 .meal__btn {
-  border-radius: 30px;
+  border-radius: 15px;
+  padding: 0;
   width: 100%;
+  height: 70px;
   background-color: #fff;
   border: none;
   margin-bottom: 20px;
   box-shadow: 5px 5px 5px #d0d0d0;
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: nowrap row;
+  justify-content: space-between;
+}
+
+.btn__content {
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 0;
+  width: 75%;
+}
+
+.btn__title {
+  margin: 0;
 }
 
 .btn__description {
@@ -253,13 +269,20 @@ footer .foot__logo p a {
   align-content: space-around;
 }
 
+.description__info {
+  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
 .btn__animation {
+  height: 100%;
   background-color: #99E2D0;
-  background-size: 10%;
   color: #fff;
   font-size: 1.2em;
-  border-radius: 0 30px 30px 0;
-  height: 100%;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  justify-self: center;
+  align-content: center;
 }
 
 .order {
