@@ -13,14 +13,69 @@ background-color: $mainbgcolor;
 a{
   text-decoration: none;
   }
-
 body {
     font-family: 'roboto','shrinkand',Arial, sans-serif;
     font-size:medium;   
     width:100%;
-    margin:0 auto;
-    margin-block-start:0;
-    margin-block-end:0;
+    margin:auto;
+  }
+  .loading{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: $mainbgcolor;
+    background-size: cover;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity: 0;
+    animation: loadingopacity 2500ms ease-in-out;
+  }
+  .loader{
+    height: 100px;
+    width: 100px;
+    border: solid 20px transparent; 
+    border-top: solid 20px $primarycolor;
+    border-right:solid 20px $secondarycolor;
+    border-left: solid 20px $tertiarycolor;
+    border-radius: 50%;
+    margin: auto;
+    position:relative;
+    z-index: 3;
+    top:50%; 
+    opacity: 0;
+    animation: spin 2s ease-in;
+  }
+  @keyframes loadingopacity{
+    0%{
+      opacity: 1;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes spin {
+    0%{
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+    2%{
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+    98%{
+    opacity: 1;
+    }
+    100%{
+      transform: rotate(360deg);
+      opacity: 0;
+    }  
   }
   
   .headlogo {
@@ -198,9 +253,10 @@ footer {
 
 .meal{
   background-color: $mainbgcolor;
-  @include smallpadding;
+  @include padding;
   margin: 0;
   border: 0;
+  scroll-behavior: smooth;
 }
 
 .textdeco{
@@ -220,13 +276,18 @@ footer {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
-  &:hover > .btn__animation{
+  &:hover {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    & > .btn__animation{
     width: 20%;
     opacity: 1;
     & > .fa-check-circle{
-     transform: rotate(-1turn);  
+     transform: rotate(360deg);  
       }
     }
+  }
 }
 
 .btn__content{
@@ -270,7 +331,7 @@ footer {
   transition: all 1000ms ease-in-out;
 }
 .fa-check-circle{
-  transform: rotate(0turn);
+  transform:rotate(0deg);
   transition : transform 1000ms;
 }
 

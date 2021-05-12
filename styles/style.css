@@ -17,13 +17,100 @@ body {
   font-family: "roboto", "shrinkand", Arial, sans-serif;
   font-size: medium;
   width: 100%;
-  margin: 0 auto;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin: auto;
 }
 
+.loading {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: #f6f6f6;
+  background-size: cover;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-animation: loadingopacity 2500ms ease-in-out;
+          animation: loadingopacity 2500ms ease-in-out;
+}
+
+.loader {
+  height: 100px;
+  width: 100px;
+  border: solid 20px transparent;
+  border-top: solid 20px #9356DC;
+  border-right: solid 20px #FF79DA;
+  border-left: solid 20px #99E2D0;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  z-index: 3;
+  top: 50%;
+  opacity: 0;
+  -webkit-animation: spin 2s ease-in;
+          animation: spin 2s ease-in;
+}
+
+@-webkit-keyframes loadingopacity {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loadingopacity {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  2% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  2% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
 .headlogo {
   font-family: "Shrikhand";
   font-size: 1.3em;
@@ -227,9 +314,10 @@ footer .foot__logo p a {
 
 .meal {
   background-color: #f6f6f6;
-  padding: 10px;
+  padding: 20px;
   margin: 0;
   border: 0;
+  scroll-behavior: smooth;
 }
 
 .textdeco {
@@ -251,12 +339,17 @@ footer .foot__logo p a {
   justify-content: space-between;
   cursor: pointer;
 }
+.meal__btn:hover {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .meal__btn:hover > .btn__animation {
   width: 20%;
   opacity: 1;
 }
 .meal__btn:hover > .btn__animation > .fa-check-circle {
-  transform: rotate(-1turn);
+  transform: rotate(360deg);
 }
 
 .btn__content {
@@ -305,7 +398,7 @@ footer .foot__logo p a {
 }
 
 .fa-check-circle {
-  transform: rotate(0turn);
+  transform: rotate(0deg);
   transition: transform 1000ms;
 }
 
