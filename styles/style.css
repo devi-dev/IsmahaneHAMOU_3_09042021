@@ -87,7 +87,7 @@ ul {
 ul .list__number {
   background-color: #9356DC;
   border-radius: 50%;
-  padding: 10px;
+  padding: 10px 15px;
   font-weight: bold;
   color: #fff;
   position: relative;
@@ -227,62 +227,86 @@ footer .foot__logo p a {
 
 .meal {
   background-color: #f6f6f6;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
   border: 0;
 }
 
 .textdeco {
-  -webkit-text-decoration: underline 5px #99E2D0;
-          text-decoration: underline 5px #99E2D0;
+  border-bottom: 5px solid #99E2D0;
 }
 
 .meal__btn {
   border-radius: 15px;
   padding: 0;
   width: 100%;
-  height: 70px;
+  max-height: 100px;
   background-color: #fff;
   border: none;
   margin-bottom: 20px;
   box-shadow: 5px 5px 5px #d0d0d0;
   display: flex;
   flex-flow: nowrap row;
+  text-align: left;
   justify-content: space-between;
+  cursor: pointer;
+}
+.meal__btn:hover > .btn__animation {
+  width: 20%;
+  opacity: 1;
+}
+.meal__btn:hover > .btn__animation > .fa-check-circle {
+  transform: rotate(-1turn);
 }
 
 .btn__content {
-  display: flex;
-  flex-flow: nowrap column;
-  align-items: flex-start;
-  padding: 10px;
+  padding: 20px;
   margin: 0;
-  width: 75%;
+  width: 100%;
+  line-height: 1.5rem;
 }
 
 .btn__title {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn__description {
   display: flex;
-  align-content: space-around;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .description__info {
-  flex-wrap: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  width: 90%;
+  text-align: left;
+}
+
+.description__price {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
 }
 
 .btn__animation {
-  height: 100%;
   background-color: #99E2D0;
   color: #fff;
   font-size: 1.2em;
   border-radius: 0 15px 15px 0;
   display: flex;
-  justify-self: center;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  width: 0%;
+  transition: all 1000ms ease-in-out;
+}
+
+.fa-check-circle {
+  transform: rotate(0turn);
+  transition: transform 1000ms;
 }
 
 .order {

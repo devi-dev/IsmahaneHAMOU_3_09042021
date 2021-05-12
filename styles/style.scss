@@ -12,7 +12,7 @@ background-color: $mainbgcolor;
 }
 a{
   text-decoration: none;
-}
+  }
 
 body {
     font-family: 'roboto','shrinkand',Arial, sans-serif;
@@ -20,8 +20,7 @@ body {
     width:100%;
     margin:0 auto;
     margin-block-start:0;
-    margin-block-end: 0;
-
+    margin-block-end:0;
   }
   
   .headlogo {
@@ -69,7 +68,7 @@ body {
       .list__number{
         background-color: $primarycolor;
         border-radius: 50%;
-        @include smallpadding;
+        padding:10px 15px;
         font-weight: bold;
         color:#fff;
         position: relative;
@@ -158,7 +157,7 @@ footer {
     p {
       margin: 0em;
       a{
-        color: white;
+      color: white;
       }
     }
   }
@@ -199,64 +198,81 @@ footer {
 
 .meal{
   background-color: $mainbgcolor;
-  @include padding;
+  @include smallpadding;
   margin: 0;
   border: 0;
 }
 
 .textdeco{
-  text-decoration:underline 5px $tertiarycolor;
+  border-bottom:5px solid $tertiarycolor;
   }
 .meal__btn{
   border-radius: 15px;
   padding: 0;
   width: 100%;
-  height: 70px;
+  max-height:100px;
   background-color: $white;
   border:none;
   margin-bottom: 20px;
   @include botboxshadow;
   display: flex;
   flex-flow:nowrap row;
+  text-align: left;
   justify-content: space-between;
+  cursor: pointer;
+  &:hover > .btn__animation{
+    width: 20%;
+    opacity: 1;
+    & > .fa-check-circle{
+     transform: rotate(-1turn);  
+      }
+    }
 }
+
 .btn__content{
-  display: flex;
-  flex-flow:nowrap column;
-  align-items: flex-start;
-  @include smallpadding;
+  @include padding;
   margin: 0;
-  width: 75%;
+  width: 100%;
+  line-height: 1.5rem;
 }
 .btn__title
 {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .btn__description{
   display: flex;
-  align-content: space-around;
+  justify-content: space-between;
+  text-align: left;
 }
 .description__info{
-  flex-wrap: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
-
+  width: 90%;
+  text-align: left;
 }
 .description__price{
-  
-
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
 }
-
 .btn__animation{
-  height: 100%;
   background-color: $tertiarycolor;
   color: $white;
   font-size:1.2em;
   border-radius: 0 15px 15px 0;
   display: flex;
-  justify-self: center;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  width: 0%;
+  transition: all 1000ms ease-in-out;
 }
-
+.fa-check-circle{
+  transform: rotate(0turn);
+  transition : transform 1000ms;
+}
 
 .order{
   @include padding;
