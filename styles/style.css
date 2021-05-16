@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*mise en forme page d'accueil*/
 header {
   display: flex;
@@ -21,25 +22,19 @@ body {
 }
 
 .loading {
-  width: 100%;
-  height: 100%;
-  margin: auto;
+  height: 0;
+  width: 0;
   background-color: #f6f6f6;
   background-size: cover;
   position: absolute;
   z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  -webkit-animation: loadingopacity 2500ms ease-in-out;
-          animation: loadingopacity 2500ms ease-in-out;
+  -webkit-animation: loadingposition 2500ms ease-in-out;
+          animation: loadingposition 2500ms ease-in-out;
 }
 
 .loader {
-  height: 100px;
-  width: 100px;
+  height: 0;
+  width: 0;
   border: solid 20px transparent;
   border-top: solid 20px #9356DC;
   border-right: solid 20px #FF79DA;
@@ -50,80 +45,98 @@ body {
   z-index: 3;
   top: 50%;
   opacity: 0;
-  -webkit-animation: spin 2s ease-in;
-          animation: spin 2s ease-in;
+  -webkit-animation: spin 2s linear;
+          animation: spin 2s linear;
 }
 
-@-webkit-keyframes loadingopacity {
+@-webkit-keyframes loadingposition {
   0% {
     opacity: 1;
+    width: 100%;
+    height: 100%;
   }
-  90% {
+  98% {
     opacity: 1;
+    width: 100%;
+    height: 100%;
   }
   100% {
     opacity: 0;
+    width: 0%;
+    height: 0%;
   }
 }
 
-@keyframes loadingopacity {
+@keyframes loadingposition {
   0% {
     opacity: 1;
+    width: 100%;
+    height: 100%;
   }
-  90% {
+  98% {
     opacity: 1;
+    width: 100%;
+    height: 100%;
   }
   100% {
     opacity: 0;
+    width: 0%;
+    height: 0%;
   }
 }
 @-webkit-keyframes spin {
   0% {
     transform: rotate(0deg);
-    opacity: 0;
-  }
-  2% {
-    transform: rotate(0deg);
     opacity: 1;
+    height: 100px;
+    width: 100px;
   }
   98% {
+    transform: rotate(360deg);
     opacity: 1;
+    height: 100px;
+    width: 100px;
   }
   100% {
     transform: rotate(360deg);
     opacity: 0;
+    width: 0;
+    height: 0;
   }
 }
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    opacity: 0;
-  }
-  2% {
-    transform: rotate(0deg);
     opacity: 1;
+    height: 100px;
+    width: 100px;
   }
   98% {
+    transform: rotate(360deg);
     opacity: 1;
+    height: 100px;
+    width: 100px;
   }
   100% {
     transform: rotate(360deg);
     opacity: 0;
+    width: 0;
+    height: 0;
   }
 }
 .headlogo {
   font-family: "Shrikhand";
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
   margin: auto;
 }
 
 .location {
   background-color: #e9e9e9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
+  display: block;
+  text-align: center;
+  margin: auto;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -191,6 +204,9 @@ ul .nav__btn {
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+ul .nav__btn i {
+  color: #353535;
 }
 ul .nav__btn:hover {
   background-color: #f2eafb;
@@ -263,6 +279,53 @@ ul .nav__btn:hover i {
   margin: 0;
 }
 
+.fa-heart {
+  font-family: "Font Awesome 5 Free";
+  opacity: 1;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0;
+}
+.fa-heart:hover::after {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+  -webkit-animation: favorite 400ms linear;
+          animation: favorite 400ms linear;
+}
+
+@-webkit-keyframes favorite {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes favorite {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 footer {
   padding: 30px;
   background-color: #353535;

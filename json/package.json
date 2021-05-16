@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/style.scss:./css/style.css -w --style compressed",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer-d ./css/"
-  },
-  "repository": {
+    "sass": "sass ./styles/style.scss -w --style compressed",
+    "prefix": "postcss ./styles/style.css --use autoprefixer-d ./styles/style.css/prefixed/"
+    },
+  "repository":{
     "type": "git",
     "url": "git+https://github.com/devi-dev/IsmahaneHAMOU_3_09042021.git"
   },
   "author": "",
   "license": "ISC",
-  "browserslist":"last 2 versions",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/devi-dev/IsmahaneHAMOU_3_09042021/issues"
   },

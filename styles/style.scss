@@ -20,23 +20,17 @@ body {
     margin:auto;
   }
   .loading{
-    width: 100%;
-    height: 100%;
-    margin: auto;
+    height: 0;
+    width: 0;
     background-color: $mainbgcolor;
     background-size: cover;
     position: absolute;
     z-index: 2;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    opacity: 0;
-    animation: loadingopacity 2500ms ease-in-out;
+    animation: loadingposition 2500ms ease-in-out;
   }
   .loader{
-    height: 100px;
-    width: 100px;
+    height:0;
+    width: 0;
     border: solid 20px transparent; 
     border-top: solid 20px $primarycolor;
     border-right:solid 20px $secondarycolor;
@@ -46,49 +40,58 @@ body {
     position:relative;
     z-index: 3;
     top:50%; 
-    opacity: 0;
-    animation: spin 2s ease-in;
+    opacity:0;
+    animation: spin 2s linear;
   }
-  @keyframes loadingopacity{
+  @keyframes loadingposition{
     0%{
-      opacity: 1;
+      opacity: 1; 
+      width: 100%;
+      height: 100%;
     }
-    90%{
+    98%{
       opacity: 1;
+      width: 100%;
+      height:100%;
     }
     100%{
       opacity: 0;
+      width:0%;
+      height:0%;
     }
   }
   @keyframes spin {
     0%{
       transform: rotate(0deg);
-      opacity: 0;
-    }
-    2%{
-      transform: rotate(0deg);
       opacity: 1;
+      height: 100px;
+      width: 100px;
     }
     98%{
+    transform: rotate(360deg);
     opacity: 1;
+    height: 100px;
+    width: 100px;
     }
     100%{
       transform: rotate(360deg);
-      opacity: 0;
+      opacity:0;
+      width:0;
+      height:0;
     }  
   }
   
   .headlogo {
     font-family: 'Shrikhand';
-    font-size:1.3em;
-    @include center;
+    font-size:1.5em;
+    @include center;  
 }
   .location{
     background-color:darken($mainbgcolor, 5%);
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
+    display: block;
+    @include center;
+    
+    font-size: 1.3em;
     font-weight:bold;
   }
     i{
@@ -134,6 +137,9 @@ body {
         @include botboxshadow;
         @include padding;
         @include topbotmargin;
+        i{
+          color: $footerbgcolor;
+          }
         &:hover {
           i{
           color: $primarycolor;
@@ -201,6 +207,45 @@ body {
   .restolocation{
     margin: 0;
   }
+  .fa-heart{
+    font-family: "Font Awesome 5 Free";
+    opacity: 1;
+    position: relative;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 0;
+      &:hover{
+      &::after{
+        content: "\f004";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: linear-gradient($primarycolor,$secondarycolor);
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+        opacity: 1;
+        animation:favorite 400ms linear;        
+        }
+      } 
+    }
+
+     @keyframes favorite{
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      } 
+    }
+  
 footer {
   padding: 30px;
   background-color: #353535;
