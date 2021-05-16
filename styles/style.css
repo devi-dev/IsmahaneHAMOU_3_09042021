@@ -28,8 +28,8 @@ body {
   background-size: cover;
   position: absolute;
   z-index: 2;
-  -webkit-animation: loadingposition 2500ms ease-in-out;
-          animation: loadingposition 2500ms ease-in-out;
+  -webkit-animation: loadingposition 2000ms ease-in-out;
+          animation: loadingposition 2000ms ease-in-out;
 }
 
 .loader {
@@ -181,8 +181,7 @@ i {
 
 ul {
   list-style: none;
-  -webkit-padding-start: 0px;
-          padding-inline-start: 0px;
+  padding: 0px;
 }
 ul .list__number {
   background-color: #9356DC;
@@ -300,13 +299,12 @@ ul .nav__btn:hover i {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
-          background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 1;
-  -webkit-animation: favorite 400ms linear;
-          animation: favorite 400ms linear;
+  -webkit-animation: favorite 250ms linear;
+          animation: favorite 250ms linear;
 }
 
 @-webkit-keyframes favorite {
@@ -380,7 +378,6 @@ footer .foot__logo p a {
   padding: 20px;
   margin: 0;
   border: 0;
-  scroll-behavior: smooth;
 }
 
 .textdeco {
@@ -401,6 +398,8 @@ footer .foot__logo p a {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
+  -webkit-animation: fadein ease-in 2s 150ms;
+          animation: fadein ease-in 2s 150ms;
 }
 .meal__btn:hover {
   white-space: nowrap;
@@ -415,6 +414,27 @@ footer .foot__logo p a {
   transform: rotate(360deg);
 }
 
+@-webkit-keyframes fadein {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .btn__content {
   padding: 20px;
   margin: 0;

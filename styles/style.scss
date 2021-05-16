@@ -26,7 +26,7 @@ body {
     background-size: cover;
     position: absolute;
     z-index: 2;
-    animation: loadingposition 2500ms ease-in-out;
+    animation: loadingposition 2000ms ease-in-out;
   }
   .loader{
     height:0;
@@ -122,7 +122,7 @@ body {
 
     ul{
       list-style: none;
-      padding-inline-start: 0px;
+      padding: 0px;
       .list__number{
         background-color: $primarycolor;
         border-radius: 50%;
@@ -217,22 +217,22 @@ body {
       bottom: 0;
       z-index: 1;
       padding: 0;
-      &:hover{
-      &::after{
-        content: "\f004";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-        background: linear-gradient($primarycolor,$secondarycolor);
-        background-clip: text;
-        -webkit-text-fill-color:transparent;
-        opacity: 1;
-        animation:favorite 400ms linear;        
+    &:hover{
+    &::after{
+      content: "\f004";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+       top: 0;
+       bottom: 0;
+       right: 0;
+       bottom: 0;
+      z-index: 0;
+      background:-webkit-linear-gradient($primarycolor,$secondarycolor);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 1;
+      animation:favorite 250ms linear;        
         }
       } 
     }
@@ -301,9 +301,8 @@ footer {
   @include padding;
   margin: 0;
   border: 0;
-  scroll-behavior: smooth;
 }
-
+    
 .textdeco{
   border-bottom:5px solid $tertiarycolor;
   }
@@ -321,6 +320,7 @@ footer {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
+  animation: fadein ease-in 2s 150ms;
   &:hover {
     white-space: nowrap;
     overflow: hidden;
@@ -334,7 +334,16 @@ footer {
     }
   }
 }
-
+@keyframes fadein {
+  0%{
+    transform:translateY(20px);
+    opacity: 0;
+  }
+  100%{
+    transform:translateY(0);
+    opacity:1;    
+  }
+}
 .btn__content{
   @include padding;
   margin: 0;
