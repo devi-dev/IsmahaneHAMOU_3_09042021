@@ -12,9 +12,13 @@ background-color: $mainbgcolor;
 }
 a{
   text-decoration: none;
-  }
-body {
-    font-family: 'roboto','shrinkand',Arial, sans-serif;
+  color: white;
+}
+h1,h2,h3{
+  margin:0;
+}
+  body {
+    font-family: 'roboto','shrinkand', Arial, sans-serif;
     font-size:medium;   
     width:100%;
     margin:auto;
@@ -24,40 +28,40 @@ body {
     width: 0;
     background-color: $mainbgcolor;
     background-size: cover;
-    position: absolute;
+    position: fixed;
     z-index: 2;
-    animation: loadingposition 2000ms ease-in-out;
+    animation: loadingposition 2000ms ease-in;
   }
   .loader{
-    height:0;
     width: 0;
+    height:0;
     border: solid 20px transparent; 
     border-top: solid 20px $primarycolor;
     border-right:solid 20px $secondarycolor;
     border-left: solid 20px $tertiarycolor;
     border-radius: 50%;
-    margin: auto;
-    position:relative;
+    position: relative; 
+    top:40vh;
     z-index: 3;
-    top:50%; 
+    @include center;
     opacity:0;
-    animation: spin 2s linear;
+    animation: spin 2s ease-in-out;
   }
   @keyframes loadingposition{
     0%{
       opacity: 1; 
-      width: 100%;
-      height: 100%;
+      min-width: 100vw;
+      min-height: 100vh;
     }
     98%{
       opacity: 1;
-      width: 100%;
-      height:100%;
+      min-width: 100vw;
+      min-height: 100vh;
     }
     100%{
       opacity: 0;
-      width:0%;
-      height:0%;
+      width: 0%;
+      height: 0%;
     }
   }
   @keyframes spin {
@@ -84,13 +88,13 @@ body {
   .headlogo {
     font-family: 'Shrikhand';
     font-size:1.5em;
-    @include center;  
+    @include center;
+    font-weight:normal ;
 }
   .location{
     background-color:darken($mainbgcolor, 5%);
-    display: block;
     @include center;
-    
+    padding: 10px 0 10px 0;    
     font-size: 1.3em;
     font-weight:bold;
   }
@@ -123,29 +127,34 @@ body {
     ul{
       list-style: none;
       padding: 0px;
+     
       .list__number{
         background-color: $primarycolor;
         border-radius: 50%;
-        padding:10px 15px;
+        padding:5px 10px;
         font-weight: bold;
         color:#fff;
         position: relative;
         left: 15px;
       }
       .nav__btn{
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
         @include btnmainshape;  
         @include botboxshadow;
         @include padding;
-        @include topbotmargin;
+        margin-bottom: 20px;
+        max-width: 400px;
         i{
-          color: $footerbgcolor;
+          color: darken($mainbgcolor,57%);
           }
         &:hover {
           i{
           color: $primarycolor;
           }
           background-color:lighten($primarycolor,35%);
-          box-shadow: 7px 7px 7px 7px darken($mainbgcolor,18%);
+          box-shadow: 5px 5px 5px 5px darken($mainbgcolor,15%);
         }
       }                 
     }
@@ -154,15 +163,11 @@ body {
       @include smallpadding;
     }
   .restaurants__card{
-      background-color: $white;
-      border-radius: 25px;
-      overflow: hidden;
-      width: 100%;
+      @include card;
       max-height:300px;
       margin-bottom: 20px;
-      position:relative;
-      z-index:1;
-      @include botboxshadow
+      @include botboxshadow;
+      border-radius: 25px;
     }
     
   .card__img{
@@ -193,7 +198,7 @@ body {
     flex-flow: row;
     line-height:1.5em;
     justify-content: space-between;
-    @include smallpadding;
+    @include padding;
   }
 
   .description__text{        
@@ -228,8 +233,8 @@ body {
        right: 0;
        bottom: 0;
       z-index: 0;
-      background:-webkit-linear-gradient($primarycolor,$secondarycolor);
-      -webkit-background-clip: text;
+      background:linear-gradient(to bottom left, $primarycolor,56%,$secondarycolor);
+      -webkit-background-clip:text;
       -webkit-text-fill-color: transparent;
       opacity: 1;
       animation:favorite 250ms linear;        
@@ -251,33 +256,39 @@ footer {
   background-color: #353535;
   color: #fff;
   text-align: left;
+}
   .foot__logo {
   font-family: "Shrikhand";
   font-size: 1.5em;
-    p {
-      margin: 0em;
+}
+    .foot__content {
+      line-height: 2em;
+      padding: 10px;
+      i{
+        padding-left: 0;
+      }
       a{
       color: white;
       }
     }
-  }
-}
 
 /*mise en forme des pages des restaurants*/
 .backhomepage{
   display: flex;
   align-items: center;
-   font-size:1.3em;
+  font-size:1.3em;
+  a{
+  color: black;
+  }
 }
 .headingresto{
-  @extend .restaurants__card;
-  max-height: 250px;
-  margin: 0;
-  border:0;
-  width: 100%;
+   @include card;
+  max-height: 500px;
   border-radius: 0;
-  box-shadow:none;
   background-color: $mainbgcolor;
+  .card__img{
+    max-height: 350px;
+  }
 }
 
 .headingresto__text{
@@ -291,6 +302,7 @@ footer {
   top:-30px;
   .restotitle{
     font-family: "Shrikhand";
+    font-size: 2.2rem;
     font-weight: normal;
     vertical-align: center;
   }
@@ -304,7 +316,29 @@ footer {
 }
     
 .textdeco{
+  padding-bottom:10px;
   border-bottom:5px solid $tertiarycolor;
+  }
+  .category__title{
+    padding-bottom: 10px;
+  }
+  .meal__category{
+    animation: fadein ease-in 1500ms forwards;
+  }
+  .meal__category:nth-child(2) {
+    animation-delay:0ms;
+    opacity: 0;
+  }
+  .meal__category:nth-child(2) {
+    animation-delay: 500ms;
+    opacity: 0;
+  }
+  .meal__category:nth-child(3) {
+    animation-delay: 1000ms;
+    opacity: 0;
+  }
+  .category__title{
+    margin-bottom: 20px;
   }
 .meal__btn{
   border-radius: 15px;
@@ -320,18 +354,42 @@ footer {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
-  animation: fadein ease-in 2s 150ms;
   &:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     & > .btn__animation{
-    width: 20%;
-    opacity: 1;
-    & > .fa-check-circle{
-     transform: rotate(360deg);  
-      }
+      transition: opacity,width;
+      transition-duration: 1s;
+      width: 20%;
+      opacity: 1;
+      & > .fa-check-circle{
+      animation:rotate 500ms ease-in forwards;
     }
+    }
+  }
+}
+.btn__animation{
+  background-color: $tertiarycolor;
+  color: $white;
+  font-size:1.5em;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  transition: opacity, width, 500ms ease-in-out;
+  opacity: 0;
+  width: 0%;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(-0.90turn);  
+
+  }
+  100%{
+    transform: rotate(0deg);
+    opacity: 1;  
   }
 }
 @keyframes fadein {
@@ -339,6 +397,10 @@ footer {
     transform:translateY(20px);
     opacity: 0;
   }
+  35%{
+    opacity: 1;  
+  }
+
   100%{
     transform:translateY(0);
     opacity:1;    
@@ -349,6 +411,8 @@ footer {
   margin: 0;
   width: 100%;
   line-height: 1.5rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .btn__title
 {
@@ -360,33 +424,19 @@ footer {
   display: flex;
   justify-content: space-between;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .description__info{
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 90%;
+  width: 85%;
   text-align: left;
 }
 .description__price{
   display: flex;
   justify-content: flex-end;
   font-weight: bold;
-}
-.btn__animation{
-  background-color: $tertiarycolor;
-  color: $white;
-  font-size:1.2em;
-  border-radius: 0 15px 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  width: 0%;
-  transition: all 1000ms ease-in-out;
-}
-.fa-check-circle{
-  transform:rotate(0deg);
-  transition : transform 1000ms;
 }
 
 .order{

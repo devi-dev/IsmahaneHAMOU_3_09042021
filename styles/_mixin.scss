@@ -38,6 +38,14 @@
     color: black;
 }
 
+@mixin card{
+    background-color: $white;
+    overflow: hidden;
+    width: 100%;
+    position:relative;
+    z-index:1;
+}
+
 
 
 
