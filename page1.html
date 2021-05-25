@@ -30,133 +30,163 @@
         </section>
 
         <section class="meal">
-            <div class="meal__category">
-                <h2 class="category__title"><span class="textdeco">ENTR</span>ÉES</h2>
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Fricassée d'escargot</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Au piment d'Espelette</div>
-                            <div class="description__price">25€</div>
-                        </div> 
-                    </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
-
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Foie gras de canard mi-cuit</h3>
-                        <div class="btn__description">
-                            <div class="description__info"> Et ses copeaux de truffe noire</div>
-                            <div class="description__price">35€</div>
+            <form method="post" action="traitement.php">
+                <div class="meal__category">
+                    <h2 class="category__title"><span class="textdeco">ENTR</span>ÉES</h2>
+                    
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="starter1" value="Fricassée d'escargot"/>
+                            <div class="btn__content">
+                                <h3 class="btn__title">Fricassée d'escargot</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Au piment d'Espelette</div>
+                                    <div class="description__price">25€</div>
+                                </div> 
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
 
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Oeuf au plat</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Assaisonné à la truffe sur lit de caviar</div>
-                            <div class="description__price">20€</div>
+                    <div class="meal__btn"> 
+                        <label>
+                        <input type="checkbox" name="starter2" value="Foie gras de canard" class ="mealselection"/>
+                            <div class="btn__content">
+                                <h3 class="btn__title">Foie gras de canard mi-cuit</h3>
+                                <div class="btn__description">
+                                    <div class="description__info"> Et ses copeaux de truffe noire</div>
+                                    <div class="description__price">35€</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
-            </div>  
-            <div class="meal__category">
-                <h2 class="category__title"><span class="textdeco">PLAT</span>S</h2>
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Filet de boeuf aux herbes</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Accompagné de sa ribambelle de légumes</div>
-                            <div class="description__price">40€</div>
-                        </div>
-                    </div> 
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
 
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Parmentier de queue de boeuf</h3>
-                        <div class="btn__description">
-                            <div class="description__info">À la truffe noire sur sa purée de panais</div>
-                            <div class="description__price">35€</div>
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="starter3" value="Oeuf au plat" class ="mealselection"/>                        
+                            <div class="btn__content">
+                                <h3 class="btn__title">Oeuf au plat</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Assaisonné à la truffe sur lit de caviar</div>
+                                    <div class="description__price">20€</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
-
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Filet de turbot</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Aux agrumes</div>
-                            <div class="description__price">44€</div>
+                </div>  
+                <div class="meal__category">
+                    <h2 class="category__title"><span class="textdeco">PLAT</span>S</h2>
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="maincourse1" value="Filet de boeuf"/>
+                            <div class="btn__content">
+                                <h3 class="btn__title">Filet de boeuf aux herbes</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Accompagné de sa ribambelle de légumes</div>
+                                    <div class="description__price">40€</div>
+                                </div>
+                            </div> 
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
+
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="maincourse2" value="Parmentier de boeuf"/>                        
+                            <div class="btn__content">
+                                <h3 class="btn__title">Parmentier de queue de boeuf</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">À la truffe noire sur sa purée de panais</div>
+                                    <div class="description__price">35€</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                     </div>
-                </div>
-            </div>  
-            <div class="meal__category">
-                <h2 class="category__title"><span class="textdeco">DESS</span>ERTS</h2>
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Paris-Brest</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Revisité</div>
-                            <div class="description__price">18€</div>
-                        </div> 
+
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="maincourse3" value="Filet de turbot"/> 
+                            <div class="btn__content">
+                                <h3 class="btn__title">Filet de turbot</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Aux agrumes</div>
+                                    <div class="description__price">44€</div>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                     </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
+                </div>  
+                <div class="meal__category">
+                    <h2 class="category__title"><span class="textdeco">DESS</span>ERTS</h2>
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="dessert1" value="Paris-Brest"/> 
+                            <div class="btn__content">
+                                <h3 class="btn__title">Paris-Brest</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Revisité</div>
+                                    <div class="description__price">18€</div>
+                                </div> 
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="dessert2" value="Macaron au chocolat"/> 
+                            <div class="btn__content">
+                                <h3 class="btn__title">Macaron au chocolat d'exception</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Et glace à la vanille de Madagascar</div>
+                                    <div class="description__price">22€</div>
+                                </div> 
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="meal__btn">
+                        <label>
+                        <input type="checkbox" name="dessert3" value="Mousse au chocolat"/> 
+                            <div class="btn__content">
+                                <h3 class="btn__title">Mousse au chocolat</h3>
+                                <div class="btn__description">
+                                    <div class="description__info">Au piment d'Espelette et à la truffe noire</div>
+                                    <div class="description__price">23€</div>
+                                </div> 
+                            </div>
+                        </label>
+                        <div class="btn__animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Macaron au chocolat d'exception</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Et glace à la vanille de Madagascar</div>
-                            <div class="description__price">22€</div>
-                        </div> 
-                    </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                <div class="order">
+                    <input type="submit" value="Commander" class="order__btn"/>
                 </div>
-
-                <div class="meal__btn">
-                    <div class="btn__content">
-                        <h3 class="btn__title">Mousse au chocolat</h3>
-                        <div class="btn__description">
-                            <div class="description__info">Au piment d'Espelette et à la truffe noire</div>
-                            <div class="description__price">23€</div>
-                        </div> 
-                    </div>
-                    <div class="btn__animation">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order">
-                <button type="submit" class="order__btn">Commander</button>
-            </div>            
+            </form>        
         </section>
            
         <footer>

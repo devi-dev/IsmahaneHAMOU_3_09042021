@@ -340,6 +340,14 @@ footer {
   .category__title{
     margin-bottom: 20px;
   }
+  input{
+    appearance: none;
+  }
+  label{
+  display: flex;
+  width: 100%; 
+  cursor: pointer; 
+}
 .meal__btn{
   border-radius: 15px;
   padding: 0;
@@ -354,7 +362,7 @@ footer {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
-  &:hover {
+  &:hover{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -406,6 +414,7 @@ footer {
     opacity:1;    
   }
 }
+
 .btn__content{
   @include padding;
   margin: 0;
