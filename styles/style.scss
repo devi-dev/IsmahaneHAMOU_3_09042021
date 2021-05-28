@@ -12,7 +12,7 @@ background-color: $mainbgcolor;
 }
 a{
   text-decoration: none;
-  color: white;
+  color: rgb(196, 185, 185);
 }
 h1,h2,h3{
   margin:0;
@@ -102,8 +102,8 @@ h1,h2,h3{
      @include smallpadding;
     }
     .heading,nav,.restaurants{
-      @include padding;
-      }
+      @include smallpadding;
+    }
     .heading{
       @include center;
     }
@@ -122,42 +122,45 @@ h1,h2,h3{
         @include botboxshadow;
         @include padding;
         @include topbotmargin;
+        &:hover{
+          @include hoveractionbutton;
+               }
       }
-
-    ul{
-      list-style: none;
-      padding: 0px;
      
-      .list__number{
-        background-color: $primarycolor;
-        border-radius: 50%;
-        padding:5px 10px;
-        font-weight: bold;
-        color:#fff;
-        position: relative;
-        left: 15px;
-      }
-      .nav__btn{
-        display: inline-flex;
-        justify-content: space-around;
-        align-items: center;
-        @include btnmainshape;  
-        @include botboxshadow;
-        @include padding;
-        margin-bottom: 20px;
-        max-width: 400px;
-        i{
-          color: darken($mainbgcolor,57%);
-          }
-        &:hover {
-          i{
-          color: $primarycolor;
-          }
-          background-color:lighten($primarycolor,35%);
-          box-shadow: 5px 5px 5px 5px darken($mainbgcolor,15%);
+      ul{
+        list-style: none;
+        padding: 0px;
+       
+        .list__number{
+          background-color: $primarycolor;
+          border-radius: 50%;
+          padding:5px 10px;
+          font-weight: bold;
+          color:#fff;
+          position: relative;
+          left: 15px;
         }
-      }                 
-    }
+        .nav__btn{
+          text-align: left;
+          display: inline-flex;
+          align-items: center;
+          @include btnmainshape;  
+          @include botboxshadow;
+          @include padding;
+          margin-bottom: 20px;
+          max-width: 400px;
+          i{
+            color: darken($mainbgcolor,57%);
+            }
+          &:hover {
+            i{
+            color: $primarycolor;
+            }
+            background-color:lighten($primarycolor,35%);
+            box-shadow: 5px 5px 5px 5px darken($mainbgcolor,15%);
+          }
+        }                 
+      }
   
   .restaurants__title{
       @include smallpadding;
@@ -323,32 +326,43 @@ footer {
     padding-bottom: 10px;
   }
   .meal__category{
-    animation: fadein ease-in 1500ms forwards;
-  }
-  .meal__category:nth-child(2) {
-    animation-delay:0ms;
     opacity: 0;
+    transform: translateY(0px);
+    animation: fadein 250ms forwards;
   }
-  .meal__category:nth-child(2) {
-    animation-delay: 500ms;
-    opacity: 0;
-  }
-  .meal__category:nth-child(3) {
-    animation-delay: 1000ms;
-    opacity: 0;
+    .meal__btn{
+      opacity: 0;
+      transform: translateY(0px);
+      animation: fadein 600ms forwards;
+    }
+    .meal__btn:nth-child(1) {
+      animation-delay:100ms;
+    }
+    .meal__btn:nth-child(2) {
+      animation-delay:200ms;
+    }
+    .meal__btn:nth-child(3) {
+      animation-delay:300ms;
+    }
+    .meal__btn:nth-child(4) {
+      animation-delay:400ms;
+    }
+  
+  @keyframes fadein {
+    0%{
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .category__title{
     margin-bottom: 20px;
   }
-  /*input{
-    appearance: none;
-  }
-  label{
-  display: flex;
-  width: 100%; 
-  cursor: pointer; 
-}
-*/
+ 
 .meal__btn{
   border-radius: 15px;
   padding: 0;
@@ -368,13 +382,14 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     & > .btn__animation{
-      transition: opacity,width;
+      opacity: 1;
+      transition:width;
       transition-duration: 1s;
       width: 20%;
-      opacity: 1;
       & > .fa-check-circle{
-      animation:rotate 500ms ease-in forwards;
-    }
+      transform: rotate(0);
+      animation:rotate 500ms ease-in;
+      }
     }
   }
 }
@@ -386,33 +401,18 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;  
-  transition: opacity, width, 500ms ease-in-out;
-  opacity: 0;
+  transition: width, 500ms ease-in;
   width: 0%;
+  opacity: 0;    
 }
 
 @keyframes rotate{
   0%{
-    transform: rotate(-0.90turn);  
+    transform: rotate(-270deg);  
 
   }
   100%{
     transform: rotate(0deg);
-    opacity: 1;  
-  }
-}
-@keyframes fadein {
-  0%{
-    transform:translateY(20px);
-    opacity: 0;
-  }
-  35%{
-    opacity: 1;  
-  }
-
-  100%{
-    transform:translateY(0);
-    opacity:1;    
   }
 }
 

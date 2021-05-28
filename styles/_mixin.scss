@@ -46,7 +46,15 @@
     z-index:1;
 }
 
-
-
+@mixin shadowhover{
+    box-shadow:0.25rem 0.25rem 0.25rem 0.25rem darken($mainbgcolor,25%);
+}
+@mixin hoveractionbutton {
+    &:hover{
+          @include shadowhover;
+          filter: brightness(110%);
+        }
+    
+}
 
 
