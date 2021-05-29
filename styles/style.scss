@@ -35,10 +35,9 @@ h1,h2,h3{
   .loader{
     width: 0;
     height:0;
-    border: solid 20px transparent; 
-    border-top: solid 20px $primarycolor;
-    border-right:solid 20px $secondarycolor;
-    border-left: solid 20px $tertiarycolor;
+    border: solid 15px transparent; 
+    border-top: solid 15px $primarycolor;
+    border-bottom:solid 15px $secondarycolor;
     border-radius: 50%;
     position: relative; 
     top:40vh;
@@ -130,6 +129,10 @@ h1,h2,h3{
       ul{
         list-style: none;
         padding: 0px;
+        li{
+          display: block;
+          width: 100%;
+        }
        
         .list__number{
           background-color: $primarycolor;
@@ -148,7 +151,6 @@ h1,h2,h3{
           @include botboxshadow;
           @include padding;
           margin-bottom: 20px;
-          max-width: 400px;
           i{
             color: darken($mainbgcolor,57%);
             }
@@ -159,6 +161,8 @@ h1,h2,h3{
             background-color:lighten($primarycolor,35%);
             box-shadow: 5px 5px 5px 5px darken($mainbgcolor,15%);
           }
+        .nav__title{
+          @include smallpadding;        }
         }                 
       }
   
@@ -455,5 +459,37 @@ footer {
   .order__btn{
   @extend .heading__btn;
  margin: 0 auto;
+  }
+}
+/*mise en page responsive v2*/
+@media screen and (min-width:1000px){
+  /*mise en page page d'accueil*/
+ .nav__list{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   max-width: 100%;
+  }
+  .restaurants{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    .restaurants__title{
+      width: 100%;
+    }
+    .restaurants__link{
+    width: 45%;
+    margin: 10px;
+    }
+  }
+    /*mise en page page restaurants*/
+  .meal{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    .order{
+      width: 100%;
+    }
   }
 }

@@ -22,7 +22,7 @@
 @mixin btnmainshape{
     font-size: 1rem;
     font-weight: bold;
-    width: 80%;
+    width: 85%;
     border-radius:30px;
     border:transparent;
     cursor: pointer;
@@ -50,11 +50,8 @@
     box-shadow:0.25rem 0.25rem 0.25rem 0.25rem darken($mainbgcolor,25%);
 }
 @mixin hoveractionbutton {
-    &:hover{
           @include shadowhover;
-          filter: brightness(110%);
-        }
-    
+          filter: brightness(110%);    
 }
 
 
