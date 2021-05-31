@@ -15,6 +15,10 @@ a {
   color: #c4b9b9;
 }
 
+i {
+  padding: 10px;
+}
+
 h1, h2, h3 {
   margin: 0;
 }
@@ -130,7 +134,7 @@ body {
   }
 }
 .headlogo {
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", "curve";
   font-size: 1.5em;
   text-align: center;
   margin: auto;
@@ -144,10 +148,6 @@ body {
   padding: 10px 0 10px 0;
   font-size: 1.3em;
   font-weight: bold;
-}
-
-i {
-  padding: 10px;
 }
 
 .heading, nav, .restaurants {
@@ -171,6 +171,7 @@ i {
 }
 
 .heading__btn, .order .order__btn {
+  font-family: "roboto", "sans-serif";
   font-size: 1rem;
   font-weight: bold;
   width: 85%;
@@ -318,12 +319,12 @@ ul .nav__btn .nav__title {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: linear-gradient(to bottom left, #9356DC, 56%, #FF79DA);
+  background: linear-gradient(to bottom left, #9356DC, 53%, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 1;
-  -webkit-animation: favorite 250ms linear;
-          animation: favorite 250ms linear;
+  -webkit-animation: favorite 250ms linear forwards;
+          animation: favorite 250ms linear forwards;
 }
 
 @-webkit-keyframes favorite {
@@ -483,7 +484,7 @@ footer {
 
 .meal__btn {
   border-radius: 15px;
-  padding: 0;
+  padding: 0px;
   width: 100%;
   max-height: 100px;
   background-color: #fff;
@@ -495,19 +496,24 @@ footer {
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
+  overflow: hidden;
 }
-.meal__btn:hover {
+
+.btn__content {
+  padding: 5px;
+}
+.btn__content:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.meal__btn:hover > .btn__animation {
+.btn__content:hover + .btn__animation {
   opacity: 1;
   transition: width;
   transition-duration: 1s;
   width: 20%;
 }
-.meal__btn:hover > .btn__animation > .fa-check-circle {
+.btn__content:hover + .btn__animation > .fa-check-circle {
   transform: rotate(0);
   -webkit-animation: rotate 500ms ease-in;
           animation: rotate 500ms ease-in;
@@ -521,9 +527,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width, 500ms ease-in;
+  transition: width;
+  transition-duration: 500ms;
   width: 0%;
-  opacity: 0;
+  opacity: 1;
+}
+.btn__animation i {
+  padding: 0;
 }
 
 @-webkit-keyframes rotate {
@@ -544,16 +554,14 @@ footer {
   }
 }
 .btn__content {
-  padding: 20px;
-  margin: 0;
-  width: 100%;
+  margin: 10px;
+  width: 90%;
   line-height: 1.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .btn__title {
   margin: 0;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -562,14 +570,16 @@ footer {
   display: flex;
   justify-content: space-between;
   text-align: left;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .description__info {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 85%;
+  width: 80%;
   text-align: left;
 }
 
