@@ -1,174 +1,203 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-	    <meta charset="utf-8" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-        <link type="text/css" rel="stylesheet" href="styles/style.css">
-	    <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap" rel="stylesheet"> 
-        <title>ohmyfood-La palette du goût</title>
-    </head>
-    <body>
-        <header>
-            <div class="backhomepage">
-            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <title>ohmyfood-La palette du goût</title>
+  </head>
+  <body>
+    <header>
+      <div class="backhomepage">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="headlogo">
+        <h1 class="logo">ohmyfood</h1>
+      </div>
+    </header>
+
+    <section class="headingresto">
+      <div class="headingresto__card">
+        <img
+          src="images/restaurants/restaurant1.jpg"
+          srcset="
+            images/restaurants/restaurant1-large.jpg  4402w,
+            images/restaurants/restaurant1-medium.jpg 2201w,
+            images/restaurants/restaurant1-small.jpg  1101w
+          "
+          sizes="100vw"
+          alt="food"
+          class="card__img"
+        />
+        <div class="headingresto__text">
+          <h2 class="restotitle">La palette du goût</h2>
+          <i class="far fa-heart fa-2x"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="meal">
+      <div class="meal__category">
+        <h2 class="category__title"><span class="textdeco">ENTR</span>ÉES</h2>
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Fricassée d'escargot</h3>
+            <div class="btn__description">
+              <div class="description__info">Au piment d'Espelette</div>
+              <div class="description__price">25€</div>
             </div>
-            <div class="headlogo">
-            <h1 class= "logo">ohmyfood</h1>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Foie gras de canard mi-cuit</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                Et ses copeaux de truffe noire
+              </div>
+              <div class="description__price">35€</div>
             </div>
-        </header>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
 
-        <section class="headingresto">
-            <div class="headingresto__card">
-                <img src="images/restaurants/restaurant1.jpg" srcset ="images/restaurants/restaurant1-large.jpg 4402w,images/restaurants/restaurant1-medium.jpg 2201w,images/restaurants/restaurant1-small.jpg 1101w" sizes="100vw" alt="food" class="card__img"/>          
-                <div class="headingresto__text">
-                    <h2 class=restotitle>La palette du goût</h2>
-                    <i class="far fa-heart fa-2x"></i>                     
-                </div>
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Oeuf au plat</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                Assaisonné à la truffe sur lit de caviar
+              </div>
+              <div class="description__price">20€</div>
             </div>
-        </section>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
 
-        <section class="meal">
-                <div class="meal__category">
-                    <h2 class="category__title"><span class="textdeco">ENTR</span>ÉES</h2>  
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Fricassée d'escargot</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Au piment d'Espelette</div>
-                                <div class="description__price">25€</div>
-                            </div> 
-                        </div>        
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn"> 
-                        <div class="btn__content">
-                            <h3 class="btn__title">Foie gras de canard mi-cuit</h3>
-                            <div class="btn__description">
-                                <div class="description__info"> Et ses copeaux de truffe noire</div>
-                                <div class="description__price">35€</div>
-                            </div>
-                        </div>    
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Oeuf au plat</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Assaisonné à la truffe sur lit de caviar</div>
-                                <div class="description__price">20€</div>
-                            </div>
-                        </div>
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="meal__category">
-                    <h2 class="category__title"><span class="textdeco">PLAT</span>S</h2>
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Filet de boeuf aux herbes</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Accompagné de sa ribambelle de légumes</div>
-                                <div class="description__price">40€</div>
-                            </div>
-                        </div>                        
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Parmentier de queue de boeuf</h3>
-                            <div class="btn__description">
-                                <div class="description__info">À la truffe noire sur sa purée de panais</div>
-                                <div class="description__price">35€</div>
-                            </div>
-                        </div>                     
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Filet de turbot</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Aux agrumes</div>
-                                <div class="description__price">44€</div>
-                            </div>
-                        </div>
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                </div>  
-                <div class="meal__category">
-                    <h2 class="category__title"><span class="textdeco">DESS</span>ERTS</h2>
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Paris-Brest</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Revisité</div>
-                                <div class="description__price">18€</div>
-                            </div> 
-                        </div>     
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn">
-                        <div class="btn__content">
-                            <h3 class="btn__title">Macaron au chocolat d'exception</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Et glace à la vanille de Madagascar</div>
-                                <div class="description__price">22€</div>
-                            </div> 
-                        </div>                        
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-
-                    <div class="meal__btn">                       
-                        <div class="btn__content">
-                            <h3 class="btn__title">Mousse au chocolat</h3>
-                            <div class="btn__description">
-                                <div class="description__info">Au piment d'Espelette et à la truffe noire</div>
-                                <div class="description__price">23€</div>
-                            </div> 
-                        </div>
-                        <div class="btn__animation">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="order">
-                    <button type="submit" class="order__btn">Commander</button>
-                </div>
-        </section>
-           
-        <footer>
-            <div class="foot__logo">ohmyfood</div>
-            <div class="foot__content">
-                <i class="fas fa-utensils"></i> Proposer un restaurant<br/>
-                <i class="fas fa-hands-helping"></i> Devenir partenaire<br/>
-                Mentions légales<br/>
-                <a href="mailto:contact@ohmyfood.fr" class="contact">Contact</a>
+      <div class="meal__category">
+        <h2 class="category__title"><span class="textdeco">PLAT</span>S</h2>
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Filet de boeuf aux herbes</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                Accompagné de sa ribambelle de légumes
+              </div>
+              <div class="description__price">40€</div>
             </div>
-        </footer>
-    </body>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Parmentier de queue de boeuf</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                À la truffe noire sur sa purée de panais
+              </div>
+              <div class="description__price">35€</div>
+            </div>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Filet de turbot</h3>
+            <div class="btn__description">
+              <div class="description__info">Aux agrumes</div>
+              <div class="description__price">44€</div>
+            </div>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="meal__category">
+        <h2 class="category__title"><span class="textdeco">DESS</span>ERTS</h2>
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Paris-Brest</h3>
+            <div class="btn__description">
+              <div class="description__info">Revisité</div>
+              <div class="description__price">18€</div>
+            </div>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Macaron au chocolat d'exception</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                Et glace à la vanille de Madagascar
+              </div>
+              <div class="description__price">22€</div>
+            </div>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <div class="meal__btn">
+          <div class="btn__content">
+            <h3 class="btn__title">Mousse au chocolat</h3>
+            <div class="btn__description">
+              <div class="description__info">
+                Au piment d'Espelette et à la truffe noire
+              </div>
+              <div class="description__price">23€</div>
+            </div>
+          </div>
+          <div class="btn__animation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="order">
+        <button type="submit" class="order__btn">Commander</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot__logo">ohmyfood</div>
+      <div class="foot__content">
+        <i class="fas fa-utensils"></i> Proposer un restaurant<br />
+        <i class="fas fa-hands-helping"></i> Devenir partenaire<br />
+        Mentions légales<br />
+        <a href="mailto:contact@ohmyfood.fr" class="contact">Contact</a>
+      </div>
+    </footer>
+  </body>
 </html>
-

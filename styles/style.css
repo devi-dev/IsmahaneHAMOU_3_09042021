@@ -6,7 +6,10 @@ header {
   justify-content: flex-start;
 }
 
-.heading, .restaurants, .meal__btn, .nav__btn {
+.heading,
+.restaurants,
+.meal__btn,
+.nav__btn {
   background-color: #f6f6f6;
 }
 
@@ -19,7 +22,9 @@ i {
   padding: 10px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -150,7 +155,9 @@ body {
   font-weight: bold;
 }
 
-.heading, nav, .restaurants {
+.heading,
+nav,
+.restaurants {
   padding: 10px;
 }
 
@@ -402,7 +409,7 @@ footer {
 }
 .headingresto__text .restotitle {
   font-family: "Shrikhand";
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: normal;
   vertical-align: center;
 }
@@ -498,22 +505,19 @@ footer {
   cursor: pointer;
   overflow: hidden;
 }
-
-.btn__content {
-  padding: 5px;
-}
-.btn__content:hover {
+.meal__btn:hover > .btn__content {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 80%;
 }
-.btn__content:hover + .btn__animation {
+.meal__btn:hover > .btn__animation {
   opacity: 1;
-  transition: width;
+  transition: width, text-overflow;
   transition-duration: 1s;
   width: 20%;
 }
-.btn__content:hover + .btn__animation > .fa-check-circle {
+.meal__btn:hover > .btn__animation > .fa-check-circle {
   transform: rotate(0);
   -webkit-animation: rotate 500ms ease-in;
           animation: rotate 500ms ease-in;
@@ -554,8 +558,9 @@ footer {
   }
 }
 .btn__content {
-  margin: 10px;
-  width: 90%;
+  padding: 15px;
+  width: 100%;
+  transition: width 1s;
   line-height: 1.5rem;
 }
 

@@ -2,504 +2,515 @@
 @import "_mixin.scss";
 /*# sourceMappingURL=style.css.map*/
 /*mise en forme page d'accueil*/
-header{
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.heading,.restaurants,.meal__btn, .nav__btn{
-background-color: $mainbgcolor;
+.heading,
+.restaurants,
+.meal__btn,
+.nav__btn {
+  background-color: $mainbgcolor;
 }
-a{
+a {
   text-decoration: none;
   color: rgb(196, 185, 185);
 }
-i{
+i {
   @include smallpadding;
 }
-h1,h2,h3{
-  margin:0;
+h1,
+h2,
+h3 {
+  margin: 0;
 }
-  body {
-    font-family: 'roboto','shrinkand', Arial, sans-serif;
-    font-size:medium;   
-    width:100%;
-    margin:auto;
+body {
+  font-family: "roboto", "shrinkand", Arial, sans-serif;
+  font-size: medium;
+  width: 100%;
+  margin: auto;
+}
+.loading {
+  height: 0;
+  width: 0;
+  background-color: $mainbgcolor;
+  background-size: cover;
+  position: fixed;
+  z-index: 2;
+  animation: loadingposition 2000ms ease-in;
+}
+.loader {
+  width: 0;
+  height: 0;
+  border: solid 15px transparent;
+  border-top: solid 15px $primarycolor;
+  border-bottom: solid 15px $secondarycolor;
+  border-radius: 50%;
+  position: relative;
+  top: 40vh;
+  z-index: 3;
+  @include center;
+  opacity: 0;
+  animation: spin 2s ease-in-out;
+}
+@keyframes loadingposition {
+  0% {
+    opacity: 1;
+    min-width: 100vw;
+    min-height: 100vh;
   }
-  .loading{
-    height: 0;
-    width: 0;
-    background-color: $mainbgcolor;
-    background-size: cover;
-    position: fixed;
-    z-index: 2;
-    animation: loadingposition 2000ms ease-in;
+  98% {
+    opacity: 1;
+    min-width: 100vw;
+    min-height: 100vh;
   }
-  .loader{
-    width: 0;
-    height:0;
-    border: solid 15px transparent; 
-    border-top: solid 15px $primarycolor;
-    border-bottom:solid 15px $secondarycolor;
-    border-radius: 50%;
-    position: relative; 
-    top:40vh;
-    z-index: 3;
-    @include center;
-    opacity:0;
-    animation: spin 2s ease-in-out;
+  100% {
+    opacity: 0;
+    width: 0%;
+    height: 0%;
   }
-  @keyframes loadingposition{
-    0%{
-      opacity: 1; 
-      min-width: 100vw;
-      min-height: 100vh;
-    }
-    98%{
-      opacity: 1;
-      min-width: 100vw;
-      min-height: 100vh;
-    }
-    100%{
-      opacity: 0;
-      width: 0%;
-      height: 0%;
-    }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+    height: 100px;
+    width: 100px;
   }
-  @keyframes spin {
-    0%{
-      transform: rotate(0deg);
-      opacity: 1;
-      height: 100px;
-      width: 100px;
-    }
-    98%{
+  98% {
     transform: rotate(360deg);
     opacity: 1;
     height: 100px;
     width: 100px;
-    }
-    100%{
-      transform: rotate(360deg);
-      opacity:0;
-      width:0;
-      height:0;
-    }  
   }
-  
-  .headlogo {
-    font-family: 'Shrikhand','curve';
-    font-size:1.5em;
-    @include center;
-    font-weight:normal ;
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 }
-  .location{
-    background-color:darken($mainbgcolor, 5%);
-    @include center;
-    padding: 10px 0 10px 0;    
-    font-size: 1.3em;
-    font-weight:bold;
-  }
-    .heading,nav,.restaurants{
-      @include smallpadding;
-    }
-    .heading{
-      @include center;
-    }
-      .heading__title{
-        font-size:1.5em;
-        @include smallpadding;
-        font-weight: bold;
-      }
-      .heading__description{
-        font-size:1.2rem;
-        @include smallpadding;
-      }
-      .heading__btn {
-        font-family: 'roboto','sans-serif';
-        @include btnmainshape;
-        @include brightbtncolor;
-        @include botboxshadow;
-        @include padding;
-        @include topbotmargin;
-        &:hover{
-          @include hoveractionbutton;
-               }
-      }
-     
-      ul{
-        list-style: none;
-        padding: 0px;
-        li{
-          display: block;
-          width: 100%;
-        }
-       
-        .list__number{
-          background-color: $primarycolor;
-          border-radius: 50%;
-          padding:5px 10px;
-          font-weight: bold;
-          color:#fff;
-          position: relative;
-          left: 15px;
-        }
-        .nav__btn{
-          text-align: left;
-          display: inline-flex;
-          align-items: center;
-          @include btnmainshape;  
-          @include botboxshadow;
-          @include padding;
-          margin-bottom: 20px;
-          i{
-            color: darken($mainbgcolor,57%);
-            }
-          &:hover {
-            i{
-            color: $primarycolor;
-            }
-            background-color:lighten($primarycolor,35%);
-            box-shadow: 5px 5px 5px 5px darken($mainbgcolor,15%);
-          }
-        .nav__title{
-          @include smallpadding;        }
-        }                 
-      }
-  
-  .restaurants__title{
-      @include smallpadding;
-    }
-  .restaurants__card{
-      @include card;
-      max-height:300px;
-      margin-bottom: 20px;
-      @include botboxshadow;
-      border-radius: 25px;
-    }
-    
-  .card__img{
-    width:100%;
-    max-height:200px;
-    object-fit: cover;
-    object-position:center;
-    position:relative;
-    z-index:0;
-    }
 
-  .card__new{
-    width: 80px;
-    text-align: center;
+.headlogo {
+  font-family: "Shrikhand", "curve";
+  font-size: 1.5em;
+  @include center;
+  font-weight: normal;
+}
+.location {
+  background-color: darken($mainbgcolor, 5%);
+  @include center;
+  padding: 10px 0 10px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.heading,
+nav,
+.restaurants {
+  @include smallpadding;
+}
+.heading {
+  @include center;
+}
+.heading__title {
+  font-size: 1.5em;
+  @include smallpadding;
+  font-weight: bold;
+}
+.heading__description {
+  font-size: 1.2rem;
+  @include smallpadding;
+}
+.heading__btn {
+  font-family: "roboto", "sans-serif";
+  @include btnmainshape;
+  @include brightbtncolor;
+  @include botboxshadow;
+  @include padding;
+  @include topbotmargin;
+  &:hover {
+    @include hoveractionbutton;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  li {
+    display: block;
+    width: 100%;
+  }
+
+  .list__number {
+    background-color: $primarycolor;
+    border-radius: 50%;
+    padding: 5px 10px;
     font-weight: bold;
-    background-color:$tertiarycolor;
-    color:darken($tertiarycolor,40%);
-    @include smallpadding;
-    position: absolute;
-    z-index:2;
-    top:10%;
-    right:5%;     
-  }
-
-  .card__description{
-    color: black;
-    display: flex;
-    flex-flow: row;
-    line-height:1.5em;
-    justify-content: space-between;
-    @include padding;
-  }
-
-  .description__text{        
-      text-overflow: ellipsis;
-      width: 60%;
-      text-align: left;
-    }
-  .restoname{
-    margin:0px;
-  }
-  .restolocation{
-    margin: 0;
-  }
-  .fa-heart{
-    font-family: "Font Awesome 5 Free";
-    opacity: 1;
+    color: #fff;
     position: relative;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      padding: 0;
-    &:hover{
-    &::after{
+    left: 15px;
+  }
+  .nav__btn {
+    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    @include btnmainshape;
+    @include botboxshadow;
+    @include padding;
+    margin-bottom: 20px;
+    i {
+      color: darken($mainbgcolor, 57%);
+    }
+    &:hover {
+      i {
+        color: $primarycolor;
+      }
+      background-color: lighten($primarycolor, 35%);
+      box-shadow: 5px 5px 5px 5px darken($mainbgcolor, 15%);
+    }
+    .nav__title {
+      @include smallpadding;
+    }
+  }
+}
+
+.restaurants__title {
+  @include smallpadding;
+}
+.restaurants__card {
+  @include card;
+  max-height: 300px;
+  margin-bottom: 20px;
+  @include botboxshadow;
+  border-radius: 25px;
+}
+
+.card__img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: 0;
+}
+
+.card__new {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  background-color: $tertiarycolor;
+  color: darken($tertiarycolor, 40%);
+  @include smallpadding;
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  right: 5%;
+}
+
+.card__description {
+  color: black;
+  display: flex;
+  flex-flow: row;
+  line-height: 1.5em;
+  justify-content: space-between;
+  @include padding;
+}
+
+.description__text {
+  text-overflow: ellipsis;
+  width: 60%;
+  text-align: left;
+}
+.restoname {
+  margin: 0px;
+}
+.restolocation {
+  margin: 0;
+}
+.fa-heart {
+  font-family: "Font Awesome 5 Free";
+  opacity: 1;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0;
+  &:hover {
+    &::after {
       content: "\f004";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       position: absolute;
-       top: 0;
-       bottom: 0;
-       right: 0;
-       bottom: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      bottom: 0;
       z-index: 0;
-      background:linear-gradient(to bottom left, $primarycolor,53%,$secondarycolor);
-      -webkit-background-clip:text;
+      background: linear-gradient(
+        to bottom left,
+        $primarycolor,
+        53%,
+        $secondarycolor
+      );
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 1;
-      animation:favorite 250ms linear forwards;        
-        }
-      } 
+      animation: favorite 250ms linear forwards;
     }
+  }
+}
 
-     @keyframes favorite{
-      0%{
-        opacity: 0;
-      }
-      100%{
-        opacity: 1;
-      } 
-    }
-  
+@keyframes favorite {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 footer {
   padding: 30px;
   background-color: #353535;
   color: #fff;
   text-align: left;
 }
-  .foot__logo {
+.foot__logo {
   font-family: "Shrikhand";
   font-size: 1.5em;
 }
-    .foot__content {
-      line-height: 2em;
-      padding: 10px;
-      i{
-        padding-left: 0;
-      }
-      a{
-      color: white;
-      }
-    }
-
-/*mise en forme des pages des restaurants*/
-.backhomepage{
-  display: flex;
-  align-items: center;
-  font-size:1.3em;
-  a{
-  color: black;
+.foot__content {
+  line-height: 2em;
+  padding: 10px;
+  i {
+    padding-left: 0;
+  }
+  a {
+    color: white;
   }
 }
-.headingresto{
-   @include card;
+
+/*mise en forme des pages des restaurants*/
+.backhomepage {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  a {
+    color: black;
+  }
+}
+.headingresto {
+  @include card;
   max-height: 500px;
   border-radius: 0;
   background-color: $mainbgcolor;
-  .card__img{
+  .card__img {
     max-height: 350px;
   }
 }
 
-.headingresto__text{
+.headingresto__text {
   @extend.card__description;
-  font-size:1.2em;
+  font-size: 1.2em;
   justify-content: space-between;
   align-items: center;
   border-radius: 30px 30px 0 0;
   background-color: $mainbgcolor;
   position: relative;
-  top:-30px;
-  .restotitle{
+  top: -30px;
+  .restotitle {
     font-family: "Shrikhand";
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     vertical-align: center;
   }
 }
 
-.meal{
+.meal {
   background-color: $mainbgcolor;
   @include padding;
   margin: 0;
   border: 0;
 }
-    
-.textdeco{
-  padding-bottom:10px;
-  border-bottom:5px solid $tertiarycolor;
-  }
-  .category__title{
-    padding-bottom: 10px;
-  }
-  .meal__category{
+
+.textdeco {
+  padding-bottom: 10px;
+  border-bottom: 5px solid $tertiarycolor;
+}
+.category__title {
+  padding-bottom: 10px;
+}
+.meal__category {
+  opacity: 0;
+  transform: translateY(0px);
+  animation: fadein 250ms forwards;
+}
+.meal__btn {
+  opacity: 0;
+  transform: translateY(0px);
+  animation: fadein 600ms forwards;
+}
+.meal__btn:nth-child(1) {
+  animation-delay: 100ms;
+}
+.meal__btn:nth-child(2) {
+  animation-delay: 200ms;
+}
+.meal__btn:nth-child(3) {
+  animation-delay: 300ms;
+}
+.meal__btn:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+@keyframes fadein {
+  0% {
     opacity: 0;
-    transform: translateY(0px);
-    animation: fadein 250ms forwards;
+    transform: translateY(20px);
   }
-    .meal__btn{
-      opacity: 0;
-      transform: translateY(0px);
-      animation: fadein 600ms forwards;
-    }
-    .meal__btn:nth-child(1) {
-      animation-delay:100ms;
-    }
-    .meal__btn:nth-child(2) {
-      animation-delay:200ms;
-    }
-    .meal__btn:nth-child(3) {
-      animation-delay:300ms;
-    }
-    .meal__btn:nth-child(4) {
-      animation-delay:400ms;
-    }
-  
-  @keyframes fadein {
-    0%{
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  
-    100%{
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .category__title{
-    margin-bottom: 20px;
-  }
- 
-.meal__btn{
+}
+.category__title {
+  margin-bottom: 20px;
+}
+
+.meal__btn {
   border-radius: 15px;
   padding: 0px;
   width: 100%;
-  max-height:100px;
+  max-height: 100px;
   background-color: $white;
-  border:none;
+  border: none;
   margin-bottom: 20px;
   @include botboxshadow;
   display: flex;
-  flex-flow:nowrap row;
+  flex-flow: nowrap row;
   text-align: left;
   justify-content: space-between;
   cursor: pointer;
   overflow: hidden;
-}
-.btn__content{
-  padding: 5px;
-  &:hover{  
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    & + .btn__animation{
+  &:hover {
+    & > .btn__content {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 80%;
+    }
+    & > .btn__animation {
       opacity: 1;
-      transition:width;
+      transition: width, text-overflow;
       transition-duration: 1s;
-      width:20%;
-      & > .fa-check-circle{
-      transform: rotate(0);
-      animation:rotate 500ms ease-in;
+      width: 20%;
+      & > .fa-check-circle {
+        transform: rotate(0);
+        animation: rotate 500ms ease-in;
       }
     }
   }
 }
-.btn__animation{
+
+.btn__animation {
   background-color: $tertiarycolor;
   color: $white;
-  font-size:1.5em;
+  font-size: 1.5em;
   border-radius: 0 15px 15px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:width;
+  transition: width;
   transition-duration: 500ms;
-  width:0%;
-  opacity: 1;  
-  i{
+  width: 0%;
+  opacity: 1;
+  i {
     padding: 0;
   }
 }
 
-@keyframes rotate{
-  0%{
-    transform: rotate(-270deg);  
-
+@keyframes rotate {
+  0% {
+    transform: rotate(-270deg);
   }
-  100%{
+  100% {
     transform: rotate(0deg);
   }
 }
 
-.btn__content{
-  margin:10px;
-  width:90%;
+.btn__content {
+  padding: 15px;
+  width: 100%;
+  transition: width 1s;
   line-height: 1.5rem;
-
 }
-.btn__title
-{
+.btn__title {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.btn__description{
+.btn__description {
   display: flex;
   justify-content: space-between;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
 }
-.description__info{
+.description__info {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 80%;
   text-align: left;
 }
-.description__price{
+.description__price {
   display: flex;
   justify-content: flex-end;
   font-weight: bold;
 }
 
-.order{
+.order {
   @include padding;
   text-align: center;
-  .order__btn{
-  @extend .heading__btn;
- margin: 0 auto;
+  .order__btn {
+    @extend .heading__btn;
+    margin: 0 auto;
   }
 }
 /*mise en page responsive v2*/
-@media screen and (min-width:1025px){
+@media screen and (min-width: 1025px) {
   /*mise en page page d'accueil*/
- .nav__list{
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   max-width: 100%;
-  }
-  .restaurants{
+  .nav__list {
     display: flex;
-    flex-flow:row wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+  }
+  .restaurants {
+    display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
-    .restaurants__title{
+    .restaurants__title {
       width: 100%;
     }
-    .restaurants__link{
-    width: 45%;
-    margin: 10px;
+    .restaurants__link {
+      width: 45%;
+      margin: 10px;
     }
   }
-    /*mise en page page restaurants*/
-  .meal{
+  /*mise en page page restaurants*/
+  .meal {
     display: flex;
-    flex-flow:row wrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: flex-start;
-    .order{
+    .order {
       width: 100%;
     }
   }
