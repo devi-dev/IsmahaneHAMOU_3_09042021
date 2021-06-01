@@ -440,13 +440,8 @@ footer {
 .meal__btn {
   opacity: 0;
   transform: translateY(0px);
-  -webkit-animation: fadein 600ms forwards;
-          animation: fadein 600ms forwards;
-}
-
-.meal__btn:nth-child(1) {
-  -webkit-animation-delay: 100ms;
-          animation-delay: 100ms;
+  -webkit-animation: fadein 400ms forwards;
+          animation: fadein 400ms forwards;
 }
 
 .meal__btn:nth-child(2) {
@@ -462,6 +457,11 @@ footer {
 .meal__btn:nth-child(4) {
   -webkit-animation-delay: 400ms;
           animation-delay: 400ms;
+}
+
+.meal__btn:nth-child(5) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 @-webkit-keyframes fadein {

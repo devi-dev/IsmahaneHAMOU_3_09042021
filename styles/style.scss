@@ -351,10 +351,7 @@ footer {
 .meal__btn {
   opacity: 0;
   transform: translateY(0px);
-  animation: fadein 600ms forwards;
-}
-.meal__btn:nth-child(1) {
-  animation-delay: 100ms;
+  animation: fadein 400ms forwards;
 }
 .meal__btn:nth-child(2) {
   animation-delay: 200ms;
@@ -364,6 +361,9 @@ footer {
 }
 .meal__btn:nth-child(4) {
   animation-delay: 400ms;
+}
+.meal__btn:nth-child(5) {
+  animation-delay: 500ms;
 }
 
 @keyframes fadein {
