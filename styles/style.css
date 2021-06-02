@@ -28,6 +28,10 @@ h3 {
   margin: 0;
 }
 
+button {
+  font-family: "roboto", sans-serif;
+}
+
 body {
   font-family: "roboto", "shrinkand", Arial, sans-serif;
   font-size: medium;
@@ -440,8 +444,13 @@ footer {
 .meal__btn {
   opacity: 0;
   transform: translateY(0px);
-  -webkit-animation: fadein 400ms forwards;
-          animation: fadein 400ms forwards;
+  -webkit-animation: fadein 200ms forwards;
+          animation: fadein 200ms forwards;
+}
+
+.meal__btn:nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
 }
 
 .meal__btn:nth-child(2) {
@@ -559,7 +568,7 @@ footer {
 }
 .btn__content {
   padding: 15px;
-  width: 100%;
+  width: 90%;
   transition: width 1s;
   line-height: 1.5rem;
 }
@@ -578,6 +587,7 @@ footer {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 97%;
 }
 
 .description__info {
